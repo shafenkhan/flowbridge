@@ -1,11 +1,63 @@
 # FlowBridge - Next Steps
 
-**Date**: October 31, 2025
-**Status**: Repository created, ready for launch when you are
+**Date**: November 19, 2025 (UPDATED)
+**Status**: 🎉 MILESTONE ACHIEVED - Core AI categorization working perfectly!
 
 ---
 
-## ✅ What's Done
+## 🎉 MILESTONE: Core AI Working! (2025-11-19)
+
+### What We Accomplished Today
+
+✅ **OpenRouter AI Integration**
+- Free-tier enforcement working (blocks paid models automatically)
+- Using Mistral 7B (free model)
+- ~1.7s average response time
+- $0/month cost
+
+✅ **Message Categorization**
+- Categories: emergency, maintenance, payment, inquiry
+- Urgency levels: critical, high, medium, low
+- Keyword extraction working
+- Emergency detection flagging owner alerts
+
+✅ **Test Suite**
+- 6/6 tests passing
+- 100% category accuracy
+- 100% urgency accuracy
+- Test scenarios: toilet overflowing, AC failure, rent questions, trash day, gas smell, light bulb
+
+✅ **Webhook Handlers**
+- Test endpoint for local development
+- OpenPhone handler ready
+- Gmail handler ready
+- WhatsApp handler ready
+
+✅ **Documentation**
+- CLAUDE.md created with full project context
+- Test scripts working (test-messages.js, test-openrouter.js)
+- .env.example configured
+
+### Test Results
+```
+Tests Run: 6/6
+Successful: 6/6
+Category Accuracy: 6/6 (100%)
+Urgency Accuracy: 6/6 (100%)
+Average Response Time: 1677ms
+Cost: $0 (free tier)
+```
+
+### How to Test
+```bash
+cd /Users/shafenkhan/projects/flowbridge
+npm run dev                  # Start server
+node test-messages.js        # Run full test suite
+```
+
+---
+
+## ✅ What Was Already Done (Oct 31)
 
 ### GitHub Repository
 - **Live at**: https://github.com/shafenkhan/flowbridge
@@ -32,11 +84,14 @@
 
 ---
 
-## 🚀 When You're Ready to Launch
+## 🚀 Immediate Next Steps
 
-### Pre-Launch Checklist
+### 1. Restart Claude Code (REQUIRED)
+**Why**: Playwright MCP was just added to `.mcp.json` - needs restart to load
+**Purpose**: Enable screenshot/video creation for demos
 
-**1. Create Demo Assets** (1-2 hours)
+### 2. Create Demo Assets with Playwright (1-2 hours)
+**Now Possible**: Playwright MCP is configured and ready
 - [ ] Record 2-3 min demo video showing:
   - Tenant sends "toilet overflowing" text
   - FlowBridge receives and analyzes with AI
@@ -240,5 +295,48 @@ FlowBridge does this. When you're ready to launch:
 
 ---
 
-**Last Updated**: October 31, 2025
-**Next Action**: Create demo video, then launch!
+**Last Updated**: November 19, 2025
+**Next Action**: Restart Claude Code → Create demos with Playwright → Launch!
+
+---
+
+## 📦 Ready to Commit (Milestone)
+
+### What to Push to GitHub Now
+
+**New Files:**
+- `CLAUDE.md` - Full AI context and project documentation
+- `src/services/aiService.js` - OpenRouter integration (already pushed)
+- `src/services/categorizer.js` - Message categorization (already pushed)
+- `test-messages.js` - Integration test suite (already pushed)
+- `test-openrouter.js` - OpenRouter connection test (already pushed)
+
+**Updated Files:**
+- `NEXT-STEPS.md` - This file (updated with milestone)
+- `.env.example` - OpenRouter configuration (already pushed)
+- `src/routes/webhooks.js` - Working webhook handlers (needs push)
+
+**Local Only (NOT committed):**
+- `.env` - API keys (gitignored ✅)
+- `node_modules/` - Dependencies (gitignored ✅)
+
+**Commit Message:**
+```
+Milestone: Core AI categorization working perfectly
+
+- Add comprehensive CLAUDE.md with full project context
+- Update NEXT-STEPS.md with milestone achievement
+- Implement working webhook handlers with AI categorization
+- Document test results: 6/6 passing, 100% accuracy
+- Free-tier enforcement active, $0/month cost
+
+Ready for demo creation and launch.
+```
+
+**Commands:**
+```bash
+cd /Users/shafenkhan/projects/flowbridge
+git add CLAUDE.md NEXT-STEPS.md src/routes/webhooks.js
+git commit -m "Milestone: Core AI categorization working perfectly"
+git push
+```
